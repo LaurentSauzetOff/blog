@@ -1,7 +1,7 @@
 import User from "../models/user.model.js";
 import bcryptjs from "bcryptjs";
 //import jwt from "jsonwebtoken";
-//import { errorHandler } from '../utils/error.js'; // Assure-toi que ce module existe et est bien importé
+import { errorHandler } from '../utils/error.js'; // Assure-toi que ce module existe et est bien importé
 
 export const signup = async (req, res, next) => {
   const { username, email, password } = req.body;
@@ -15,7 +15,7 @@ export const signup = async (req, res, next) => {
     // Vérifier si l'utilisateur existe déjà
     const existingUser = await User.findOne({ email });
     if (existingUser) {
-      return next(errorHandler(400, "User already exists"));
+      return next(errorHandler(400, "L'utilisateur existe déjà !"));
     }
 
     // Hachage du mot de passe
