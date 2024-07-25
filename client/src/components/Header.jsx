@@ -29,10 +29,6 @@ export default function Header() {
       const res = await fetch("/api/user/signout", {
         method: "POST",
       });
-      const contentType = res.headers.get("content-type");
-      if (!contentType || !contentType.includes("application/json")) {
-        throw new Error("La réponse n'est pas en JSON");
-      }
       const data = await res.json();
       if (!res.ok) {
         console.log(data.message);
