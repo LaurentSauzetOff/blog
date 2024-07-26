@@ -145,6 +145,8 @@ export default function CreatePost() {
             }
           >
             <option value="uncategorized">Select a category</option>
+            <option value="jeuxvideo">Jeux video</option>
+            <option value="cinema">Cinéma</option>
             <option value="javascript">JavaScript</option>
             <option value="reactjs">React.js</option>
             <option value="nextjs">Next.js</option>
